@@ -1,3 +1,10 @@
+check() {
+    if [[ $hostonly_mode == "strict" ]]; then 
+        # Skip if building kdump initrd
+        return 1
+    fi
+}
+
 depends() {
     # We need the rdcore binary
     echo rdcore

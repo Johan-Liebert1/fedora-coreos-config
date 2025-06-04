@@ -1,3 +1,10 @@
+check() {
+    # Skip if building kdump initrd
+    if [[ $hostonly_mode == "strict" ]]; then 
+        return 1
+    fi
+}
+
 install_and_enable_unit() {
     unit="$1"; shift
     target="$1"; shift
